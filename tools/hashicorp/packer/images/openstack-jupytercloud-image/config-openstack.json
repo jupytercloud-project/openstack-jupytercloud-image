@@ -2,8 +2,27 @@
   "builders": [
     "type": "openstack",
     "identity_endpoint": "{{ user `openstack_identity_endpoint` }}",
-    "username": "{{ user `openstack_username`}}",
-    "password": "{{ user `openstack_password`}}",
-    
+    "domain_name": "{{ user `openstack_domain_name` }}",
+    "tenant_name": "{{ user `openstack_tenant_name` }}",
+    "username": "{{ user `openstack_username` }}",
+    "password": "{{ user `openstack_password` }}",
+    "source_image": "{{ user `openstack_source_image` }}",
+    "flavor": "{{ user `openstack_flavor` }}",
+    "image_name": "openstack-jupyterhub-image",
+    "config_drive": true,
+    "use_blockstorage_volume": true,
+    "volume_size": "1",
+    "image_tags": [
+      "alpine", "jupyterhub"
+    ],
+    "communicator": "ssh",
+  ],
+  "provisionners": [
+    {
+      "type": "shell",
+      "inline": [
+        "ls -alFhR /tmp/data"
+      ]
+    }
   ]
 }

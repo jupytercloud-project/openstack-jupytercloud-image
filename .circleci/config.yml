@@ -25,6 +25,9 @@ jobs:
         name: 'Installing dependencies'
         command: |
           pip install --user python-openstackclient
+    - run:
+        name: 'Uploading source image'
+        command: |
           openstack image create \
                     --location ${SRC}
                     openstack-alpine-image-3.9.3

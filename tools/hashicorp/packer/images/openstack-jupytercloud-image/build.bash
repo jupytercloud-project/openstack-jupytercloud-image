@@ -7,7 +7,7 @@ function ::Packer.build() {
   PACKER_LOG=1 \
   packer build \
     -var-file ${packer_project}/run/release.json \
-    ${packer_project}/config-openstack.json \
+    ${packer_project}/config-openstack.json
 }
 
 function ::Main () {

@@ -1,0 +1,9 @@
+{
+  "builders": [
+    "type": "openstack",
+    "identity_endpoint": "{{ user `openstack_identity_endpoint` }}",
+    "username": "{{ user `openstack_username`}}",
+    "password": "{{ user `openstack_password`}}",
+    
+  ]
+}

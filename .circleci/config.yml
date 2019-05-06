@@ -29,7 +29,7 @@ jobs:
         name: 'Uploading source image'
         command: |
           curl --location \
-               --output=cacert.pem \
+               --output cacert.pem \
                ${OS_CACERT}
           openstack --os-cacert cacert.pem \
                     image create \

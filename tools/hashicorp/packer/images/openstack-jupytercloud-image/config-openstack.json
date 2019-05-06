@@ -1,7 +1,7 @@
 {
   "variables": {
     "identity_endpoint": "{{ env `OS_AUTH_URL` }}",
-    "cacert": "{{ env `OS_CACERT` }}",
+    "cacert": "cacert.pem",
     "domain_name": "{{ env `OS_DOMAIN_NAME` }}",
     "tenant_name": "{{ env `OS_TENANT_NAME` }}",
     "username": "{{ env `OS_USERNAME` }}",

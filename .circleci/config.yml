@@ -21,6 +21,10 @@ jobs:
         command: |
           echo 'export RELEASE_VERSION=0.0.1' >> ${BASH_ENV}
     - run:
+        name: 'Installing dependencies'
+        command: |
+          pip install --user python-openstackclient
+    - run:
         name: 'Fetching build container image'
         command: |
           curl --location ${DKR} | docker load

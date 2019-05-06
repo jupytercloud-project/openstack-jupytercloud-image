@@ -3,6 +3,8 @@ version: '3'
 services:
   
   build_container:
+    environment:
+    - OS_CACERT: "${OS_CACERT}"
     container_name: build_container
     image: jupytercloud-project/build-container:latest
     ports:

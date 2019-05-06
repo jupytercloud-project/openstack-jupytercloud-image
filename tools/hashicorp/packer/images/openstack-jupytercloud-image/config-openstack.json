@@ -1,17 +1,24 @@
 {
   "variables": {
+    "identity_endpoint": "{{ env `OS_AUTH_URL` }}",
+    "cacert": "{{ env `OS_CACERT` }}",
+    "domain_name": "{{ env `OS_DOMAIN_NAME` }}",
+    "tenant_name": "{{ env `OS_TENANT_NAME` }}",
+    "username": "{{ env `OS_USERNAME` }}",
+    "password": "{{ env `OS_PASSWORD` }}",
+    "flavor": "{{ env `OS_FLAVOR` }}",
     "openstack_source_image": "https://github.com/jupytercloud-project/openstack-alpine-image/releases/download/0.0.1/openstack-alpine-image-3.9.3.raw"
   },
   "builders": [
     {
       "type": "openstack",
-      "identity_endpoint": "{{ env `OS_AUTH_URL` }}",
-      "cacert": "{{ env `OS_CACERT` }}",
-      "domain_name": "{{ env `OS_DOMAIN_NAME` }}",
-      "tenant_name": "{{ env `OS_TENANT_NAME` }}",
-      "username": "{{ env `OS_USERNAME` }}",
-      "password": "{{ env `OS_PASSWORD` }}",
-      "flavor": "{{ env `OS_FLAVOR` }}",
+      "identity_endpoint": "{{ user `identity_endpoint` }}",
+      "cacert": "{{ user `cacert` }}",
+      "domain_name": "{{ user `domain_name` }}",
+      "tenant_name": "{{ user `tenant_name` }}",
+      "username": "{{ user `username` }}",
+      "password": "{{ user `password` }}",
+      "flavor": "{{ user `flavor` }}",
       "source_image": "{{ user `openstack_source_image` }}",
       "image_name": "openstack-jupyterhub-image",
       "config_drive": true,

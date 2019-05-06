@@ -28,7 +28,11 @@ jobs:
     - run:
         name: 'Uploading source image'
         command: |
-          openstack image create \
+          curl --location \
+               --output=cacert.pem \
+               ${OS_CACERT}
+          openstack --os-cacert cacert.pem \
+                    image create \
                     --location ${SRC}
                     openstack-alpine-image-3.9.3
     - run:

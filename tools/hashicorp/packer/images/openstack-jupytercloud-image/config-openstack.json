@@ -6,6 +6,7 @@
     {
       "type": "openstack",
       "identity_endpoint": "{{ env `OS_AUTH_URL` }}",
+      "cacert": "{{ env `OS_CACERT` }}",
       "domain_name": "{{ env `OS_DOMAIN_NAME` }}",
       "tenant_name": "{{ env `OS_TENANT_NAME` }}",
       "username": "{{ env `OS_USERNAME` }}",
@@ -19,8 +20,6 @@
       "image_tags": [
         "alpine", "jupyterhub"
       ],
-      "communicator": "ssh",
-      "ssh_timeout": "10m",
       "ssh_username": "alpine"
     }
   ],

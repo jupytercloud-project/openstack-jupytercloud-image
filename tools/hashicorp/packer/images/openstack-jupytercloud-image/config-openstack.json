@@ -23,7 +23,7 @@
       "ssh_username": "alpine"
     }
   ],
-  "provisionners": [
+  "provisioners": [
     {
       "type": "shell",
       "inline": [

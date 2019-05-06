@@ -8,6 +8,9 @@ services:
     - OS_CACERT="${OS_CACERT}"
     - OS_DOMAIN_NAME="${OS_DOMAIN_NAME}"
     - OS_TENANT_NAME="${OS_TENANT_NAME}"
+    - OS_USERNAME="${OS_USERNAME}"
+    - OS_PASSWORD="${OS_PASSWORD}"
+    - OS_FLAVOR="${OS_FLAVOR}"
     container_name: build_container
     image: jupytercloud-project/build-container:latest
     ports:

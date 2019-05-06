@@ -5,11 +5,11 @@
   "builders": [
     {
       "type": "openstack",
-      "identity_endpoint": "{{ user `openstack_identity_endpoint` }}",
-      "domain_name": "{{ user `openstack_domain_name` }}",
-      "tenant_name": "{{ user `openstack_tenant_name` }}",
-      "username": "{{ user `openstack_username` }}",
-      "password": "{{ user `openstack_password` }}",
+      "identity_endpoint": "{{ env `OS_AUTH_URL` }}",
+      "domain_name": "{{ env `OS_DOMAIN_NAME` }}",
+      "tenant_name": "{{ env `OS_TENANT_NAME` }}",
+      "username": "{{ env `OS_USERNAME` }}",
+      "password": "{{ env `OS_PASSWORD` }}",
       "source_image": "{{ user `openstack_source_image` }}",
       "flavor": "{{ user `openstack_flavor` }}",
       "image_name": "openstack-jupyterhub-image",

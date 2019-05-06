@@ -4,8 +4,8 @@ services:
   
   build_container:
     environment:
-    - OS_AUTH_URL="${OS_AUTH_URL}"
-    - OS_CACERT="${OS_CACERT}"
+    - OS_AUTH_URL=${OS_AUTH_URL}
+    - OS_CACERT=${OS_CACERT}
     - OS_DOMAIN_NAME="${OS_DOMAIN_NAME}"
     - OS_TENANT_NAME="${OS_TENANT_NAME}"
     - OS_USERNAME="${OS_USERNAME}"

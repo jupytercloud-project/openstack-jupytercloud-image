@@ -1,4 +1,7 @@
 {
+  "variables": {
+    "openstack_source_image": "https://github.com/jupytercloud-project/openstack-alpine-image/releases/download/0.0.1/openstack-alpine-image-3.9.3.raw"
+  },
   "builders": [
     "type": "openstack",
     "identity_endpoint": "{{ user `openstack_identity_endpoint` }}",

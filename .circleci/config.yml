@@ -14,7 +14,6 @@ jobs:
       ARTIFACT_DIR: ./qemu-registry
       GHR: github.com/tcnksm/ghr
       DKR: https://github.com/jupytercloud-project/build-container/releases/download/0.0.1/jupytercloud-project_build-container_latest.dkr
-      SRC: https://github.com/jupytercloud-project/openstack-alpine-image/releases/download/0.0.1/openstack-alpine-image-3.9.3.raw
     steps:
     - checkout
     - run:

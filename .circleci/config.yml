@@ -34,6 +34,7 @@ jobs:
           ls -alFh
           openstack --version
           openstack --os-cacert ./cacert.pem \
+                    --os-image-api-version 1 \
                     image create \
                     --location ${SRC}
                     openstack-alpine-image-3.9.3

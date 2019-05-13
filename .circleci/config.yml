@@ -32,6 +32,7 @@ jobs:
                --output ./cacert.pem \
                ${OS_CACERT}
           ls -alFh
+          openstack --version
           openstack --os-cacert ./cacert.pem \
                     image create \
                     --location ${SRC}

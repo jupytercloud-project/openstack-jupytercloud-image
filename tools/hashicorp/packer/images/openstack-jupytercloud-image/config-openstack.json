@@ -36,6 +36,8 @@
       "networks": [
         "{{ user `network_uuid`}}"
       ],
+      "communicator": "ssh",
+      "ssh_timeout": "10m",
       "ssh_username": "alpine"
     }
   ],

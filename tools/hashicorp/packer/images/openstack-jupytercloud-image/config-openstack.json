@@ -7,7 +7,7 @@
     "username": "{{ env `OS_USERNAME` }}",
     "password": "{{ env `OS_PASSWORD` }}",
     "flavor": "{{ env `OS_FLAVOR` }}",
-    "openstack_source_image_name": "openstack-alpine-image-3.9.3.raw"
+    "openstack_source_image_name": "openstack-alpine-image-3.9.3"
   },
   "builders": [
     {

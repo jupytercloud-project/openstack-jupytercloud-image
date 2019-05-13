@@ -6,9 +6,8 @@ packer_project="$(dirname ${BASH_SOURCE})"
 image_name_base="$(basename ${packer_project})"
 
 function ::CACert.fetch() {
-  curl --location \
-       --output ./cacert.pem \
-       "${OS_CACERT}"
+  curl --output ./cacert.pem \
+       --location "${OS_CACERT}"
 }
 
 function ::Image.upload() {
@@ -17,7 +16,7 @@ function ::Image.upload() {
   # make it work even with openstack installation without http image source
   #
   curl --output openstack-alpine-image-3.9.3.raw \
-       --location ${SRC}
+       --location "${SRC}"
   openstack --os-cacert ./cacert.pem \
             --os-image-api-version 2 \
             image create \

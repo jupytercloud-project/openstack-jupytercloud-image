@@ -11,6 +11,7 @@ services:
     - OS_USERNAME=${OS_USERNAME}
     - OS_PASSWORD=${OS_PASSWORD}
     - OS_FLAVOR=${OS_FLAVOR}
+    - SRC=https://github.com/jupytercloud-project/openstack-alpine-image/releases/download/0.0.1/openstack-alpine-image-3.9.3.raw
     container_name: build_container
     image: jupytercloud-project/build-container:latest
     ports:

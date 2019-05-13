@@ -19,7 +19,10 @@
       "username": "{{ user `username` }}",
       "password": "{{ user `password` }}",
       "flavor": "{{ user `flavor` }}",
-      "source_image_name": "{{ user `openstack_source_image_name` }}",
+      "source_image_filter": {
+        name: "{{ user `openstack_source_image_name` }}",
+        most_recent: true
+      },
       "image_name": "openstack-jupyterhub-image",
       "config_drive": true,
       "use_blockstorage_volume": true,

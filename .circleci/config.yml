@@ -33,10 +33,12 @@ jobs:
                ${OS_CACERT}
           ls -alFh
           openstack --version
+          curl --output openstack-alpine-image-3.9.3.raw \
+               --location ${SRC} \
           openstack --os-cacert ./cacert.pem \
-                    --os-image-api-version 1 \
+                    --os-image-api-version 2 \
                     image create \
-                    --location ${SRC} \
+                    --file ./openstack-alpine-image-3.9.3.raw \
                     openstack-alpine-image-3.9.3
     - run:
         name: 'Fetching build container image'

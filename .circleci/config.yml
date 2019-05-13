@@ -22,10 +22,6 @@ jobs:
         command: |
           echo 'export RELEASE_VERSION=0.0.1' >> ${BASH_ENV}
     - run:
-        name: 'Installing dependencies'
-        command: |
-          pip install python-openstackclient
-    - run:
         name: 'Uploading source image'
         command: |
           curl --location \

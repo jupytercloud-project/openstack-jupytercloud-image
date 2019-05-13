@@ -20,7 +20,9 @@
       "password": "{{ user `password` }}",
       "flavor": "{{ user `flavor` }}",
       "source_image_filter": {
-        "name": "{{ user `openstack_source_image_name` }}",
+        "filters": {
+          "name": "{{ user `openstack_source_image_name` }}"
+        },
         "most_recent": true
       },
       "image_name": "openstack-jupyterhub-image",

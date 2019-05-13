@@ -22,21 +22,6 @@ jobs:
         command: |
           echo 'export RELEASE_VERSION=0.0.1' >> ${BASH_ENV}
     - run:
-        name: 'Uploading source image'
-        command: |
-          curl --location \
-               --output ./cacert.pem \
-               ${OS_CACERT}
-          ls -alFh
-          openstack --version
-          curl --output openstack-alpine-image-3.9.3.raw \
-               --location ${SRC}
-          openstack --os-cacert ./cacert.pem \
-                    --os-image-api-version 2 \
-                    image create \
-                    --file ./openstack-alpine-image-3.9.3.raw \
-                    openstack-alpine-image-3.9.3
-    - run:
         name: 'Fetching build container image'
         command: |
           curl --location ${DKR} | docker load
